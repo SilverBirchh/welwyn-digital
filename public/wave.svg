@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1512 982" fill="none" xmlns="http://www.w3.org/2000/svg" data-iorad-extension="firefox">
+  <style>
+    #blue-circle {
+      display: none;
+    }
+  </style>
+  <g clip-path="url(#clip0_726_18146)">
+    <rect width="1512" height="982" fill="white" />
+    <rect x="-170" y="-185.564" width="105.24" height="557.137" rx="50" transform="rotate(-42 -170 -185.564)"
+      fill="#FF5254" />
+    <rect x="1119.52" y="967.652" width="177" height="557.137" rx="50" transform="rotate(-127 1119.52 967.652)"
+      fill="#FF5254" />
+    <ellipse cx="162.926" cy="882.087" rx="107.5" ry="104" transform="rotate(-10 162.926 882.087)" fill="#A2ED27" />
+    <ellipse cx="212.5" cy="981.5" rx="86.5" ry="73.5" fill="white" />
+  </g>
+  <defs>
+    <clipPath id="clip0_726_18146">
+      <rect width="1512" height="982" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
