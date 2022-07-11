@@ -53,24 +53,22 @@ export const Project: FC<ProjectProps> = ({
             responsive={[
               {
                 size: {
-                  width: 400,
-                  height: 200,
+                  width: 300,
                 },
-                maxWidth: 400,
+                maxWidth: 600,
               },
               {
                 size: {
-                  width: 900,
-                  height: 500,
+                  width: 500,
                 },
                 maxWidth: 900,
               },
+
               {
                 size: {
-                  width: 1000,
-                  height: 600,
+                  width: 700,
                 },
-                maxWidth: 1500,
+                maxWidth: 1200,
               },
             ]}
           />
