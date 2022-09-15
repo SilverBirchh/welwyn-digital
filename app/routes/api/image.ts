@@ -1,6 +1,6 @@
 import type { LoaderFunction } from "@remix-run/node";
+import { sharpTransformer } from "remix-image-sharp";
 import { imageLoader, DiskCache } from "remix-image/server";
-import { sharpTransformer } from "~/utils/sharp";
 
 const config = {
   selfUrl: "http://localhost:3000",

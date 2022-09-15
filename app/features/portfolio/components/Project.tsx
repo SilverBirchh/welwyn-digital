@@ -48,8 +48,10 @@ export const Project: FC<ProjectProps> = ({
           _groupHover={{ transform: "scale(1)" }}
         >
           <Image
+            unoptimized
             alt={title}
             src={image}
+            dprVariants={[2]}
             responsive={[
               {
                 size: {
@@ -63,10 +65,9 @@ export const Project: FC<ProjectProps> = ({
                 },
                 maxWidth: 900,
               },
-
               {
                 size: {
-                  width: 700,
+                  width: 600,
                 },
                 maxWidth: 1200,
               },

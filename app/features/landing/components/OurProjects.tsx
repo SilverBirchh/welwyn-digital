@@ -136,8 +136,10 @@ export const OurProjects = () => {
                 _groupHover={{ transform: "scale(1)" }}
               >
                 <Image
+                  unoptimized
                   alt={project.title}
                   src={project.image}
+                  dprVariants={[2]}
                   responsive={[
                     {
                       size: {
@@ -151,7 +153,6 @@ export const OurProjects = () => {
                       },
                       maxWidth: 900,
                     },
-
                     {
                       size: {
                         width: 600,
