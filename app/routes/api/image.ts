@@ -1,5 +1,4 @@
 import type { LoaderFunction } from "@remix-run/node";
-import { sharpTransformer } from "remix-image-sharp";
 import type { Resolver } from "remix-image/server";
 import {
   imageLoader,
@@ -7,6 +6,8 @@ import {
   fsResolver,
   fetchResolver,
 } from "remix-image/server";
+
+import { sharpTransformer } from "~/utils/sharp";
 
 export const fetchImage: Resolver = async (asset, url, options, basePath) => {
   if (url.startsWith("/") && (url.length === 1 || url[1] !== "/")) {
@@ -23,6 +24,5 @@ const config = {
   transformer: sharpTransformer,
 };
 
-export const loader: LoaderFunction = ({ request }) => {
-  return imageLoader(config, request);
-};
+export const loader: LoaderFunction = ({ request }) =>
+  imageLoader(config, request);

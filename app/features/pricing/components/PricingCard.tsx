@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import {
   Flex,
   Heading,
@@ -6,11 +8,10 @@ import {
   ListIcon,
   ListItem,
   Text,
-  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import * as React from "react";
 import { HiCheckCircle } from "react-icons/hi";
+
 import type { CardProps } from "./Card";
 import { Card } from "./Card";
 

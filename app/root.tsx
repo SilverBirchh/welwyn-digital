@@ -1,7 +1,8 @@
-// root.tsx
 import React, { useContext, useEffect } from "react";
+
+import { ChakraProvider, DarkMode } from "@chakra-ui/react";
 import { withEmotionCache } from "@emotion/react";
-import { ChakraProvider, DarkMode, LightMode } from "@chakra-ui/react";
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -10,11 +11,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { MetaFunction, LinksFunction } from "@remix-run/node";
+import remixImageStyles from "remix-image/remix-image.css";
 
 import { ServerStyleContext, ClientStyleContext } from "./context";
 import theme from "./styles/theme";
-import remixImageStyles from "remix-image/remix-image.css";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -30,9 +30,9 @@ export const meta: MetaFunction = () => ({
     "Leading web design and development agency based in Hertfordshire. We design Websites & Mobile Apps that deliver results for businesses in Hertfordshire. Helping small businesses get online for affordable prices.",
 });
 
-export let links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: remixImageStyles }];
-};
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: remixImageStyles },
+];
 
 interface DocumentProps {
   children: React.ReactNode;
@@ -51,6 +51,7 @@ const Document = withEmotionCache(
       const tags = emotionCache.sheet.tags;
       emotionCache.sheet.flush();
       tags.forEach((tag) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (emotionCache.sheet as any)._insertTag(tag);
       });
       // reset cache to reapply global styles

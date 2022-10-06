@@ -11,14 +11,14 @@ import {
   Text,
   Flex,
 } from "@chakra-ui/react";
-import { AnimatePresence } from "framer-motion";
 import type { IconType } from "react-icons";
 import { AiOutlineMobile } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
 import { MdDesignServices } from "react-icons/md";
 import { TbSocial } from "react-icons/tb";
-import { ChakraBox } from "~/components/Layout/ChakraBox";
+
 import { Websites } from "~/features/services/components/Websites";
+
 import { MobileApp } from "./MobileApp";
 import { WebApps } from "./WebApps";
 
@@ -71,22 +71,21 @@ const CustomTab = forwardRef(
   }
 );
 
-export const Products = () => {
-  return (
-    <Tabs variant="solid-rounded" mt={5}>
-      <Container mt={10} maxW="900px" mb={5}>
-        <TabList gap={20} overflow={"auto"}>
-          {TABS.map((tab) => (
-            <CustomTab key={tab.title} icon={tab.icon}>
-              {tab.title}
-            </CustomTab>
-          ))}
-        </TabList>
-      </Container>
-      <Flex justifyContent="center" w="full">
+export const Products = () => (
+  <Tabs variant="solid-rounded" mt={5}>
+    <Container mt={10} maxW="900px" mb={5}>
+      <TabList gap={20} overflow={"auto"}>
+        {TABS.map((tab) => (
+          <CustomTab key={tab.title} icon={tab.icon}>
+            {tab.title}
+          </CustomTab>
+        ))}
+      </TabList>
+    </Container>
+    <Flex justifyContent="center" w="full">
       <TabPanels maxW="1200px">
         <TabPanel>
-            <Websites />          
+          <Websites />
         </TabPanel>
         <TabPanel>
           <WebApps />
@@ -96,7 +95,6 @@ export const Products = () => {
         </TabPanel>
         <TabPanel>4</TabPanel>
       </TabPanels>
-      </Flex>
-    </Tabs>
-  );
-};
+    </Flex>
+  </Tabs>
+);

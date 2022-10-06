@@ -1,3 +1,6 @@
+import type { FC } from "react";
+import { useEffect, useRef } from "react";
+
 import {
   Flex,
   Container,
@@ -14,12 +17,11 @@ import {
   useToast,
   LightMode,
 } from "@chakra-ui/react";
-import { MdEmail } from "react-icons/md";
-import { BsFillPhoneVibrateFill } from "react-icons/bs";
-import { ChakraBox } from "~/components/Layout/ChakraBox";
 import { useForm } from "@formspree/react";
-import type { FC } from "react";
-import { useEffect, useRef } from "react";
+import { BsFillPhoneVibrateFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+
+import { ChakraBox } from "~/components/Layout/ChakraBox";
 
 type Props = {
   theme?: "light" | "dark" | "transparent";
@@ -88,7 +90,7 @@ export const Enquiry: FC<Props> = ({ theme = "dark" }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            // @ts-ignore no problem in operation, although type error appears.
+            // @ts-expect-error no problem in operation, although type error appears.
             transition={{ duration: 1 }}
             variants={{
               visible: {

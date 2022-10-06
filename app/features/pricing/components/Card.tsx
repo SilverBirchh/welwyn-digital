@@ -1,5 +1,6 @@
 import type { BoxProps } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
+
 import { CardBadge } from "./CardBadge";
 
 export interface CardProps extends BoxProps {

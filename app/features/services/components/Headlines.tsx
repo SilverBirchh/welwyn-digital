@@ -1,11 +1,4 @@
-import {
-  Center,
-  Container,
-  Flex,
-  Grid,
-  Icon,
-  Text,
-} from "@chakra-ui/react";
+import { Center, Container, Flex, Grid, Icon, Text } from "@chakra-ui/react";
 import { BiDevices } from "react-icons/bi";
 import { BsFlower3, BsGear, BsLightningCharge, BsSun } from "react-icons/bs";
 import { HiOutlineSupport } from "react-icons/hi";
@@ -43,51 +36,55 @@ const DELIVER = [
   },
 ];
 
-export const Headlines = () => {
-  return (
-    <Flex flex={1} direction="column" mt={10} placeItems="center" mb={16}>
-      <Container maxW="900px" centerContent textAlign={"center"} gap={5}>
-        <Text fontWeight="medium" color={["#ff6c5a"]} letterSpacing="wide">
-          THE HEADLINES
-        </Text>
-        <Text flex={1} fontSize={["2xl", "3xl"]} fontWeight="bold">
-          Everything you want from a digital partner
-        </Text>
-        <Text fontSize="md" color="gray.600">
-          No matter the service you choose, you can be sure you'll be in the
-          safest of hands. We take this seriously. That's why every projects
-          benefits from all of this as well!
-        </Text>
-        <Grid
+export const Headlines = () => (
+  <Flex flex={1} direction="column" mt={10} placeItems="center" mb={16}>
+    <Container maxW="900px" centerContent textAlign={"center"} gap={5}>
+      <Text fontWeight="medium" color={["#ff6c5a"]} letterSpacing="wide">
+        THE HEADLINES
+      </Text>
+      <Text flex={1} fontSize={["2xl", "3xl"]} fontWeight="bold">
+        Everything you want from a digital partner
+      </Text>
+      <Text fontSize="md" color="gray.600">
+        No matter the service you choose, you can be sure you'll be in the
+        safest of hands. We take this seriously. That's why every projects
+        benefits from all of this as well!
+      </Text>
+      <Grid
         mt={10}
-          gap={10}
-          as="ul"
-          width="100%"
-          gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr"]}
-        >
-          {DELIVER.map((item) => {
-            return (
-              <Flex
-                direction="column"
-                justifyContent="center"
-                alignItems="center"
-                key={item.title}
-                bg="white"
-                p={5}
-                borderRadius="md"
-                gap={5}
-              >
-                
-                <Center marginTop={-10} p={2} h={14} w={14} borderRadius="md" bg={"#6dd2da"}>
-                  <Icon h={"full"} w={"full"} as={item.icon} color="white" />
-                </Center>
-                <Text fontWeight="bold">{item.title}</Text>
-                <Text textAlign="center" color={"gray.600"} fontSize="sm">{item.text}</Text>
-              </Flex>
-            );
-          })}
-        </Grid>
-      </Container>
-    </Flex>
-  );
-};
+        gap={10}
+        as="ul"
+        width="100%"
+        gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr"]}
+      >
+        {DELIVER.map((item) => (
+          <Flex
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            key={item.title}
+            bg="white"
+            p={5}
+            borderRadius="md"
+            gap={5}
+          >
+            <Center
+              marginTop={-10}
+              p={2}
+              h={14}
+              w={14}
+              borderRadius="md"
+              bg={"#6dd2da"}
+            >
+              <Icon h={"full"} w={"full"} as={item.icon} color="white" />
+            </Center>
+            <Text fontWeight="bold">{item.title}</Text>
+            <Text textAlign="center" color={"gray.600"} fontSize="sm">
+              {item.text}
+            </Text>
+          </Flex>
+        ))}
+      </Grid>
+    </Container>
+  </Flex>
+);

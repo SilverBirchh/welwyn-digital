@@ -1,3 +1,5 @@
+import type { FC, RefObject } from "react";
+
 import {
   Drawer,
   DrawerOverlay,
@@ -11,7 +13,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Link as RemixLink } from "@remix-run/react";
-import type { FC, RefObject } from "react";
 
 type Props = {
   isOpen: boolean;
@@ -19,48 +20,46 @@ type Props = {
   btnRef: RefObject<HTMLDivElement>;
 };
 
-export const MenuDrawer: FC<Props> = ({ isOpen, onClose, btnRef }) => {
-  return (
-    <>
-      <Drawer
-        isOpen={isOpen}
-        placement="right"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>
-            <Box as="span" color="#6dd2da">
-              Welwyn
-            </Box>{" "}
-            <Box as="span" color="#ff6c5a">
-              Digital
-            </Box>
-          </DrawerHeader>
+export const MenuDrawer: FC<Props> = ({ isOpen, onClose, btnRef }) => (
+  <>
+    <Drawer
+      isOpen={isOpen}
+      placement="right"
+      onClose={onClose}
+      finalFocusRef={btnRef}
+    >
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerCloseButton />
+        <DrawerHeader>
+          <Box as="span" color="#6dd2da">
+            Welwyn
+          </Box>{" "}
+          <Box as="span" color="#ff6c5a">
+            Digital
+          </Box>
+        </DrawerHeader>
 
-          <DrawerBody>
-            <VStack gap={2} alignItems="flex-start" color="white">
-              <Link as={RemixLink} to="/">
-                <Text>Home</Text>
-              </Link>
-              <Link as={RemixLink} to="/services">
-                <Text>Services</Text>
-              </Link>
-              <Link as={RemixLink} to="/portfolio">
-                <Text>Portfolio</Text>
-              </Link>
-              <Link as={RemixLink} to="/pricing">
-                <Text>Pricing</Text>
-              </Link>
-              <Link as={RemixLink} to="/contact">
-                <Text>Contact</Text>
-              </Link>
-            </VStack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </>
-  );
-};
+        <DrawerBody>
+          <VStack gap={2} alignItems="flex-start" color="white">
+            <Link as={RemixLink} to="/">
+              <Text>Home</Text>
+            </Link>
+            <Link as={RemixLink} to="/services">
+              <Text>Services</Text>
+            </Link>
+            <Link as={RemixLink} to="/portfolio">
+              <Text>Portfolio</Text>
+            </Link>
+            <Link as={RemixLink} to="/pricing">
+              <Text>Pricing</Text>
+            </Link>
+            <Link as={RemixLink} to="/contact">
+              <Text>Contact</Text>
+            </Link>
+          </VStack>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
+  </>
+);

@@ -8,7 +8,10 @@
     "build": "remix build",
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc -b"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
@@ -35,8 +38,11 @@
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "@types/sharp": "^0.30.2",
-    "eslint": "^8.11.0",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "prettier": "2.6.2"
   },
   "engines": {
     "node": ">=14"

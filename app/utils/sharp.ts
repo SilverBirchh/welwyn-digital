@@ -2,19 +2,29 @@ import type { Transformer } from "remix-image";
 import { MimeType } from "remix-image";
 import sharp from "sharp";
 
-const supportedInputs = new Set([
+export const supportedInputs = new Set([
   MimeType.JPEG,
   MimeType.PNG,
+  MimeType.GIF,
   MimeType.WEBP,
   MimeType.TIFF,
+  MimeType.AVIF,
 ]);
 
-const supportedOutputs = new Set([MimeType.JPEG, MimeType.PNG, MimeType.WEBP]);
+export const supportedOutputs = new Set([
+  MimeType.JPEG,
+  MimeType.PNG,
+  MimeType.GIF,
+  MimeType.WEBP,
+  MimeType.TIFF,
+  MimeType.AVIF,
+]);
 
 export const sharpTransformer: Transformer = {
   name: "sharpTransformer",
   supportedInputs,
   supportedOutputs,
+  fallbackOutput: MimeType.PNG,
   transform: async (
     { data },
     {
@@ -28,23 +38,62 @@ export const sharpTransformer: Transformer = {
       compressionLevel,
       loop,
       delay,
+      blurRadius,
+      rotate,
+      flip,
+      crop,
     }
   ) => {
-    const image = sharp(data);
+    const fixedBackground = {
+      r: background[0],
+      g: background[1],
+      b: background[2],
+      alpha: background[3],
+    };
 
-    image
-      .resize(width, height, {
+    const image = sharp(data, {
+      animated: true,
+    });
+
+    image.ensureAlpha(1);
+
+    if (crop) {
+      image.extract({
+        left: crop.x,
+        top: crop.y,
+        width: crop.width,
+        height: crop.height,
+      });
+    }
+
+    if (width != null || height != null) {
+      image.resize(width, height, {
         fit,
         position,
-        ...(background && {
-          background: {
-            r: background[0],
-            g: background[1],
-            b: background[2],
-            alpha: background[3],
-          },
-        }),
-      })
+        background: fixedBackground,
+      });
+    }
+
+    if (flip) {
+      if (flip === "horizontal" || flip === "both") {
+        image.flop();
+      }
+      if (flip === "vertical" || flip === "both") {
+        image.flip();
+      }
+    }
+
+    if (rotate && rotate != 0) {
+      image.rotate(rotate, {
+        background: fixedBackground,
+      });
+    }
+
+    if (blurRadius && blurRadius > 0) {
+      image.blur(blurRadius);
+    }
+
+    const result = await image
       .jpeg({
         quality,
         progressive: true,
@@ -55,16 +104,25 @@ export const sharpTransformer: Transformer = {
         compressionLevel,
         force: outputContentType === MimeType.PNG,
       })
+      .gif({
+        loop,
+        delay,
+        force: outputContentType === MimeType.GIF,
+      })
       .webp({
         quality,
         force: outputContentType === MimeType.WEBP,
       })
       .tiff({
         quality,
-        // cannot be displayed on browsers
-        force: false,
-      });
+        force: outputContentType === MimeType.TIFF,
+      })
+      .avif({
+        quality,
+        force: outputContentType === MimeType.AVIF,
+      })
+      .toBuffer();
 
-    return image.toBuffer();
+    return new Uint8Array(result);
   },
 };

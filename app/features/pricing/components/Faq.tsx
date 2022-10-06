@@ -28,44 +28,48 @@ const FAQs = [
   },
 ];
 
-export const Faq = () => {
-  return (
-    <Flex direction={["column", "column", "row"]} p={10} gap={{base: 5, md: 20}}>
-      <Flex direction="column">
-        <Text color="#ff6c5a">Support</Text>
-        <Text fontWeight="bold" fontSize="3xl" color="white">
-          FAQs
-        </Text>
-        <Text color="gray.300">
-          Everything you need to know about the service and billing.
-        </Text>
-      </Flex>
-      <Accordion flex={1} allowMultiple>
-        {FAQs.map((faq) => (
-          <AccordionItem
-            key={faq.title}
-            borderTopWidth={0}
-            borderBottomWidth={0}
-            border="none"
-          >
-            <h2>
-              <AccordionButton>
-                <Box
-                  fontWeight="medium"
-                  fontSize="lg"
-                  flex="1"
-                  textAlign="left"
-                  color="white"
-                >
-                  {faq.title}
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4} color="gray.300">{faq.text}</AccordionPanel>
-          </AccordionItem>
-        ))}
-      </Accordion>
+export const Faq = () => (
+  <Flex
+    direction={["column", "column", "row"]}
+    p={10}
+    gap={{ base: 5, md: 20 }}
+  >
+    <Flex direction="column">
+      <Text color="#ff6c5a">Support</Text>
+      <Text fontWeight="bold" fontSize="3xl" color="white">
+        FAQs
+      </Text>
+      <Text color="gray.300">
+        Everything you need to know about the service and billing.
+      </Text>
     </Flex>
-  );
-};
+    <Accordion flex={1} allowMultiple>
+      {FAQs.map((faq) => (
+        <AccordionItem
+          key={faq.title}
+          borderTopWidth={0}
+          borderBottomWidth={0}
+          border="none"
+        >
+          <h2>
+            <AccordionButton>
+              <Box
+                fontWeight="medium"
+                fontSize="lg"
+                flex="1"
+                textAlign="left"
+                color="white"
+              >
+                {faq.title}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4} color="gray.300">
+            {faq.text}
+          </AccordionPanel>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  </Flex>
+);

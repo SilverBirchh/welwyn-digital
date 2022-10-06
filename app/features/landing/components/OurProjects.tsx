@@ -1,4 +1,4 @@
-import { Text, Box, Flex, Img, Center, Spacer } from "@chakra-ui/react";
+import { Text, Box, Flex, Img, Spacer } from "@chakra-ui/react";
 import Image, { remixImageLoader } from "remix-image";
 
 const PROJECTS = [
@@ -22,59 +22,62 @@ const PROJECTS = [
   },
 ];
 
-export const OurProjects = () => {
-  return (
-    <Flex pt={20} bg="#334155" direction="column" textAlign={"center"}>
-      <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
-        OUR WORK
-      </Text>
-      <Spacer h={2} />
-      <Text flex={1} color="white" fontSize={["4xl", "5xl", "5xl"]} fontWeight="bold">
-        Full of{" "}
-        <Box as="span" color="#6dd2da">
-          creativity
+export const OurProjects = () => (
+  <Flex pt={20} bg="#334155" direction="column" textAlign={"center"}>
+    <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
+      OUR WORK
+    </Text>
+    <Spacer h={2} />
+    <Text
+      flex={1}
+      color="white"
+      fontSize={["4xl", "5xl", "5xl"]}
+      fontWeight="bold"
+    >
+      Full of{" "}
+      <Box as="span" color="#6dd2da">
+        creativity
+      </Box>
+    </Text>
+    <Spacer flexBasis={5} />
+    <Flex pb={20} gap={20} overflow="scroll" px={10} alignItems="center">
+      {PROJECTS.map((project) => (
+        <Box
+          minW={["300px", "350px", "400px"]}
+          maxW={["300px", "350px", "400px"]}
+          key={project.title}
+        >
+          <Img
+            unoptimized
+            alt={project.title}
+            as={Image}
+            loaderUrl="/api/image"
+            src={project.image}
+            loader={remixImageLoader}
+            placeholder="blur"
+            dprVariants={[1, 3]}
+            responsive={[
+              {
+                size: {
+                  width: project.sizes[0],
+                },
+              },
+              {
+                size: {
+                  width: project.sizes[1],
+                },
+                maxWidth: 300,
+              },
+              {
+                size: {
+                  width: project.sizes[2],
+                },
+                maxWidth: 200,
+              },
+            ]}
+          />
         </Box>
-      </Text>
-      <Spacer flexBasis={5} />
-      <Flex pb={20} gap={20} overflow="scroll" px={10} alignItems="center">
-        {PROJECTS.map((project) => (
-          <Box
-            minW={["300px", "350px", "400px"]}
-            maxW={["300px", "350px", "400px"]}
-            key={project.title}
-          >
-            <Img
-              unoptimized
-              alt={project.title}
-              as={Image}
-              loaderUrl="/api/image"
-              src={project.image}
-              loader={remixImageLoader}
-              placeholder="blur"
-              dprVariants={[1, 3]}
-              responsive={[
-                {
-                  size: {
-                    width: project.sizes[0],
-                  },
-                },
-                {
-                  size: {
-                    width: project.sizes[1],
-                  },
-                  maxWidth: 300,
-                },
-                {
-                  size: {
-                    width: project.sizes[2],
-                  },
-                  maxWidth: 200,
-                },
-              ]}
-            />
-          </Box>
-        ))}
-      </Flex>
+      ))}
     </Flex>
-  );
-};
+  </Flex>
+);

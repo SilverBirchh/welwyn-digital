@@ -8,10 +8,11 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { MdDesignServices } from "react-icons/md";
 import { AiOutlineMobile } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
+import { MdDesignServices } from "react-icons/md";
 import { TbSocial } from "react-icons/tb";
+
 import { ChakraBox } from "~/components/Layout/ChakraBox";
 
 const ITEMS = [
@@ -116,7 +117,7 @@ const WhatWeDo = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              // @ts-ignore no problem in operation, although type error appears.
+              // @ts-expect-error no problem in operation, although type error appears.
               transition={{ duration: 1, delay: isSmall ? 0.75 : index * 0.5 }}
               variants={{
                 visible: {
@@ -136,7 +137,9 @@ const WhatWeDo = () => {
               <Text flexGrow={1} textColor="gray.300">
                 {item.description}
               </Text>
-              <Button size="xs" colorScheme="blue">Learn more</Button>
+              <Button size="xs" colorScheme="blue">
+                Learn more
+              </Button>
             </ChakraBox>
           ))}
         </SimpleGrid>

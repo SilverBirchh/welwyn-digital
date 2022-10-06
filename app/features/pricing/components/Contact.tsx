@@ -1,10 +1,9 @@
 import { Box, Button, Container, Icon, Spacer, Text } from "@chakra-ui/react";
-import { RiQuestionAnswerFill } from "react-icons/ri";
 import { Link as RemixLink } from "@remix-run/react";
+import { RiQuestionAnswerFill } from "react-icons/ri";
 
-const Contact = () => {
-  return (
-    <Box p={5}>
+const Contact = () => (
+  <Box p={5}>
     <Container
       maxW="900px"
       borderRadius="md"
@@ -34,8 +33,7 @@ const Contact = () => {
         Send us an email
       </Button>
     </Container>
-    </Box>
-  );
-};
+  </Box>
+);
 
 export default Contact;

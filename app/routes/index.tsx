@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
+
 import Footer from "~/components/Layout/Footer";
 import Header from "~/components/Layout/Header";
 import { Enquiry } from "~/features/landing/components/Enquiry";

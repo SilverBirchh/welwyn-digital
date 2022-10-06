@@ -1,18 +1,18 @@
+import { useRef } from "react";
+
 import {
-  Flex,
   Icon,
   Link,
-  useBreakpointValue,
   useDisclosure,
   HStack,
   Text,
   Box,
   Button,
 } from "@chakra-ui/react";
-import { useRef } from "react";
-import { CgMenuRight } from "react-icons/cg";
-import { MenuDrawer } from "./MenuDrawer";
 import { Link as RemixLink } from "@remix-run/react";
+import { CgMenuRight } from "react-icons/cg";
+
+import { MenuDrawer } from "./MenuDrawer";
 
 export const Menu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

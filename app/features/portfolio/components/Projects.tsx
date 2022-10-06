@@ -1,5 +1,6 @@
 import type { SystemProps } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
+
 import type { ProjectProps } from "~/features/portfolio/components/Project";
 import { Project } from "~/features/portfolio/components/Project";
 
@@ -28,8 +29,8 @@ const PROJECTS: ProjectProps[] = [
 ];
 
 type Props = {
-  direction?:  SystemProps["flexDirection"];
-}
+  direction?: SystemProps["flexDirection"];
+};
 
 export default function Projects({ direction = "column" }: Props) {
   return (
