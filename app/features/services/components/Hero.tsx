@@ -7,100 +7,33 @@ import {
   Spacer,
   Text,
 } from "@chakra-ui/react";
-import { Devices } from "./Devices";
 import Header from "~/components/Layout/Header";
 
 export const Hero = () => {
   return (
-    <Flex
-      bg="linear-gradient(to right, #E2E2E2, #C9D6FF)"
-      minH={["100vh"]}
-      direction="column"
+    <Box
+      backgroundColor="#edeffc"
+      backgroundImage="radial-gradient(at 0% 0%, hsla(60,79%,68%,1) 0px, transparent 50%), radial-gradient(at 100% 0%, hsla(300,100%,84%,1) 0px, transparent 50%)"
     >
       <Header backgroundColor="transparent" />
-      <Flex
-        marginTop={["-90px", 0]}
-        flex={1}
-        height={"100%"}
-        direction="column"
-        justifyContent="center"
-      >
-        <Container maxW="900px" centerContent>
+      <Flex flex={1} direction="column" mt={10}>
+        <Container maxW="900px">
           <Text fontWeight="medium" color={["#ff6c5a"]} letterSpacing="wide">
             OUR SERVICES
           </Text>
-          <Flex
-            flexWrap="wrap"
-            flexDirection={["column"]}
-            gap={10}
-            textAlign="center"
-          >
-            <Text flex={1} fontSize={["3xl", "4xl", "5xl"]} fontWeight="bold">
-              What We Can Do
-            </Text>
-            <Flex
-              direction="row"
-              w={"full"}
-              justifyContent="center"
-              alignItems="center"
-              gap={2}
-              flexWrap="wrap"
-            >
-              <Button
-                as="a"
-                href="#websites"
-                cursor="pointer"
-                variant="link"
-                borderTop="10px solid transparent"
-                transition="transform 500ms ease"
-                marginTop="-10px"
-                _hover={{ transform: "translateY(-10px)" }}
-              >
-                <Text color={"#062238"}>Websites</Text>
-              </Button>
-
-              <Divider w="30px" borderColor={"#062238"} />
-
-              <Button
-                as="a"
-                cursor="pointer"
-                variant="link"
-                href="#web-apps"
-                borderTop="10px solid transparent"
-                transition="transform 500ms ease"
-                marginTop="-10px"
-                _hover={{ transform: "translateY(-10px)" }}
-              >
-                <Text color={"#062238"}>Web Apps</Text>
-              </Button>
-
-              <Divider w="30px" borderColor={"#062238"} />
-
-              <Button
-                as="a"
-                cursor="pointer"
-                href="#mobile-apps"
-                variant="link"
-                transition="transform 500ms ease"
-                borderTop="10px solid transparent"
-                marginTop="-10px"
-                _hover={{ transform: "translateY(-10px)" }}
-              >
-                <Text color={"#062238"}>Mobile Apps</Text>
-              </Button>
-            </Flex>
-          </Flex>
-          <Spacer flexBasis={50} />
-          <Box
-            flex={1}
-            w={["100%", "100%", "60ch", "60ch"]}
-            maxW={["60ch"]}
-            sx={{ aspectRatio: "16 : 9" }}
-          >
-            <Devices />
-          </Box>
+          <Text flex={1} fontSize={["3xl", "4xl"]} fontWeight="bold">
+            Move even faster with Welwyn Digital
+          </Text>
+          <Text mt={4} maxW={"3xl"} color="gray.600">
+            We're dedicated to your project and want to see you succeed. That's
+            why all you have to do is give us the brief and we'll handle the
+            rest. We get ads in front of the right people and websites that
+            morph to any device size. We keep your budget low but offer first
+            class services. Free updates in lighting quick speed means your
+            business can move faster than ever before.
+          </Text>
         </Container>
       </Flex>
-    </Flex>
+    </Box>
   );
 };

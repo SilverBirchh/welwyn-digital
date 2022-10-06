@@ -19,7 +19,7 @@ const SPECIAL = [
   "Full Stack Capabilities",
 ];
 
-export const MobileApp = () => {
+export const Marketing = () => {
   return (
     <Box bg="#f7fafc" borderRadius="md" shadow="md">
       <Container id="mobile-apps" p={10} maxW="900px" centerContent>

@@ -30,11 +30,10 @@ interface PricingCardProps extends CardProps {
 export const PricingCard = (props: PricingCardProps) => {
   const { data, icon, button, ...rest } = props;
   const { features, price, name, period } = data;
-  const accentColor = useColorModeValue("blue.600", "blue.200");
 
   return (
     <Card rounded={{ sm: "xl" }} {...rest}>
-      <VStack spacing={6}>
+      <VStack spacing={3}>
         <Icon aria-hidden as={icon} fontSize="4xl" />
         <Heading size="md" fontWeight="extrabold">
           {name}
@@ -45,9 +44,9 @@ export const PricingCard = (props: PricingCardProps) => {
         justify="center"
         fontWeight="extrabold"
         color={"#062238"}
-        my="8"
+        my="4"
       >
-        <Heading size="3xl" fontWeight="inherit" lineHeight="0.9em">
+        <Heading size="xl" fontWeight="inherit" lineHeight="0.9em">
           {price}
         </Heading>
         <Text fontWeight="inherit" fontSize="2xl">

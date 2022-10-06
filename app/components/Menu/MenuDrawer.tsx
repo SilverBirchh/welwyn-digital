@@ -41,7 +41,7 @@ export const MenuDrawer: FC<Props> = ({ isOpen, onClose, btnRef }) => {
           </DrawerHeader>
 
           <DrawerBody>
-            <VStack gap={2} alignItems="flex-start">
+            <VStack gap={2} alignItems="flex-start" color="white">
               <Link as={RemixLink} to="/">
                 <Text>Home</Text>
               </Link>

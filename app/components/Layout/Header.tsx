@@ -8,16 +8,16 @@ type Props = {
   backgroundColor?: string;
 };
 
-const Header: FC<Props> = ({ backgroundColor = "white" }) => {
+const Header: FC<Props> = ({ backgroundColor = "#0b1121" }) => {
   return (
     <>
-      <Box w="full" backgroundColor={backgroundColor} zIndex={10}>
-        <Container p={5} maxW="900px">
+      <Box shadow="md" position="sticky" top={0} w="full" backgroundColor={backgroundColor} zIndex={90}>
+        <Container p={2} maxW="1200px">
           <Flex justifyContent="space-between" alignItems="center" mx="auto">
             <Link to="/">
               <VisuallyHidden>Home</VisuallyHidden>
               <Box>
-                <Logo height={50} />
+                <Logo height={25} />
               </Box>
             </Link>
             <Menu />

@@ -1,11 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import Footer from "~/components/Layout/Footer";
-import { Menu } from "~/components/Menu/Menu";
+import Header from "~/components/Layout/Header";
 import { Enquiry } from "~/features/landing/components/Enquiry";
 import { Hero } from "~/features/landing/components/Hero";
 import { OurProcess } from "~/features/landing/components/OurProcess";
 import { OurProjects } from "~/features/landing/components/OurProjects";
+import { TrustedBy } from "~/features/landing/components/TrustedBy";
 import WhatWeDo from "~/features/landing/components/WhatWeDo";
 
 export const links: LinksFunction = () => [
@@ -45,9 +46,11 @@ export const meta: MetaFunction = () => ({
 
 export default function Index() {
   return (
-    <Box scrollBehavior="smooth">
+    <Box minH="100vh" scrollBehavior="smooth" bg="#0b1121">
+      <Header />
       <Hero />
       <WhatWeDo />
+      <TrustedBy />
       <OurProcess />
       <OurProjects />
       <Enquiry />

@@ -1,36 +1,69 @@
-import { Flex, Icon, useDisclosure } from "@chakra-ui/react";
+import {
+  Flex,
+  Icon,
+  Link,
+  useBreakpointValue,
+  useDisclosure,
+  HStack,
+  Text,
+  Box,
+  Button,
+} from "@chakra-ui/react";
 import { useRef } from "react";
-import { CgMenu } from "react-icons/cg";
+import { CgMenuRight } from "react-icons/cg";
 import { MenuDrawer } from "./MenuDrawer";
-import { ChakraBox } from "~/components/Layout/ChakraBox";
+import { Link as RemixLink } from "@remix-run/react";
 
 export const Menu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLDivElement>(null);
-
   return (
     <>
-      <ChakraBox
-        whileHover={{
-          scale: 1.2,
-          transition: { duration: 0.3 },
-        }}
+      <HStack
+        py={1}
+        gap={2}
+        alignItems="flex-start"
+        color="white"
+        fontSize="small"
+        display={{ base: "none", sm: "flex" }}
       >
-        <Flex
-          bg="white"
-          role="button"
-          justifyContent="center"
-          alignItems="center"
-          borderRadius="50%"
-          p={2}
-          ref={btnRef}
-          onClick={onOpen}
-          shadow="md"
-        >
-          <Icon as={CgMenu} h={7} w={7} color="#6dd2da" />
-        </Flex>
-      </ChakraBox>
-      <MenuDrawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
+        <Link as={RemixLink} to="/services">
+          <Text>Services</Text>
+        </Link>
+        <Link as={RemixLink} to="/portfolio">
+          <Text>Portfolio</Text>
+        </Link>
+        <Link as={RemixLink} to="/pricing">
+          <Text>Pricing</Text>
+        </Link>
+        <Button as={RemixLink} to="/contact" colorScheme="teal" size="xs">
+          Contact
+        </Button>
+      </HStack>
+      {/* Mobile Drawer */}
+
+      <Box
+        display={{ base: "flex", sm: "none" }}
+        role="button"
+        justifyContent="center"
+        alignItems="center"
+        borderRadius="50%"
+        p={2}
+        ref={btnRef}
+        onClick={onOpen}
+      >
+        <Icon
+          as={CgMenuRight}
+          h={7}
+          w={7}
+          color="white"
+          _hover={{ color: "#ff6c5a" }}
+          transition="color 300ms ease"
+        />
+      </Box>
+      <Box as="span" display={{ base: "none", sm: "none" }}>
+        <MenuDrawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
+      </Box>
     </>
   );
 };

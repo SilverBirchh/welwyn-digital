@@ -1,0 +1,13 @@
+diff --git a/node_modules/remix-image/build/types/transformer.d.ts b/node_modules/remix-image/build/types/transformer.d.ts
+index c110950..f7f9816 100644
+--- a/node_modules/remix-image/build/types/transformer.d.ts
++++ b/node_modules/remix-image/build/types/transformer.d.ts
+@@ -55,7 +55,7 @@ export interface TransformOptions {
+     /** The location to crop the source image before any other operations are applied. (optional, default null) */
+     crop?: CropOptions | null;
+ }
+-export declare type SizelessOptions = Omit<TransformOptions, "width" | "height">;
++export declare type SizelessOptions = TransformOptions;
+ export declare type Transformer = {
+     name: string;
+     supportedInputs: Set<MimeType>;

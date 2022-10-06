@@ -1,7 +1,7 @@
 // root.tsx
 import React, { useContext, useEffect } from "react";
 import { withEmotionCache } from "@emotion/react";
-import { ChakraProvider, LightMode } from "@chakra-ui/react";
+import { ChakraProvider, DarkMode, LightMode } from "@chakra-ui/react";
 import {
   Links,
   LiveReload,
@@ -14,6 +14,7 @@ import type { MetaFunction, LinksFunction } from "@remix-run/node";
 
 import { ServerStyleContext, ClientStyleContext } from "./context";
 import theme from "./styles/theme";
+import remixImageStyles from "remix-image/remix-image.css";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -30,7 +31,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export let links: LinksFunction = () => {
-  return [];
+  return [{ rel: "stylesheet", href: remixImageStyles }];
 };
 
 interface DocumentProps {
@@ -86,9 +87,9 @@ export default function App() {
   return (
     <Document>
       <ChakraProvider theme={theme}>
-        <LightMode>
+        <DarkMode>
           <Outlet />
-        </LightMode>
+        </DarkMode>
       </ChakraProvider>
     </Document>
   );

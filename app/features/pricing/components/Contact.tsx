@@ -1,13 +1,15 @@
-import { Button, Container, Icon, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Icon, Spacer, Text } from "@chakra-ui/react";
 import { RiQuestionAnswerFill } from "react-icons/ri";
 import { Link as RemixLink } from "@remix-run/react";
 
 const Contact = () => {
   return (
+    <Box p={5}>
     <Container
       maxW="900px"
       borderRadius="md"
-      bg="#f7fafc"
+      bg="#1a202c"
+      color="white"
       p={5}
       centerContent
       mb={10}
@@ -32,6 +34,7 @@ const Contact = () => {
         Send us an email
       </Button>
     </Container>
+    </Box>
   );
 };
 

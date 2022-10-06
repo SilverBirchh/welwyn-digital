@@ -17,7 +17,7 @@ const ITEMS = [
     title: "Experts in Development",
     icon: <Icon as={BsFillPeopleFill} h={10} w={10} color="#f5b9bb" />,
     description:
-      "At Welwyn Digital we do two things and we do them well. Websites and apps are our bread and butter. We work hard to understand your needs and execute the project exactly how you need it.",
+      "At Welwyn Digital we've been in the digital space for years'. Websites, apps and digital marketing are our bread and butter. We work hard to understand your needs and execute the project exactly how you need it.",
   },
   {
     title: "Clear Pricing",
@@ -33,7 +33,7 @@ const ITEMS = [
   },
   {
     title: "Make Changes Anytime",
-    icon: <Icon as={BsClockHistory} h={10} w={10} color="#37612a" />,
+    icon: <Icon as={BsClockHistory} h={10} w={10} color="#48BB78" />,
     description:
       "We know that requirements change that's why you will be able to request changes and modifications at any time.",
   },
@@ -42,19 +42,17 @@ const ITEMS = [
 export const OurProcess = () => {
   return (
     <Flex
-      bgColor="white"
-      p={10}
+      px={{ base: 0, sm: 5, md: 10 }}
+      pt={10}
+      pb={20}
       minH="100vh"
       justifyContent="center"
       direction="column"
-      backgroundImage="url(/wave.svg)"
-      backgroundSize="cover"
-      backgroundPosition={["unset", "center", "center", "unset"]}
     >
       <Container maxW="900px" centerContent>
         <Text
           fontWeight="medium"
-          color={["#062238", "#ff6c5a"]}
+          color={"#ff6c5a"}
           letterSpacing="wide"
         >
           WHY CHOOSE US
@@ -66,14 +64,14 @@ export const OurProcess = () => {
           textAlign="center"
           maxW="60ch"
         >
-          <Text flex={1} fontSize="3xl" fontWeight="bold">
+          <Text textColor="white" flex={1} fontSize="3xl" fontWeight="bold">
             <Box as="span" color="#6dd2da">
               Experts
             </Box>{" "}
             in what we do
           </Text>
-          <Text flex={1} textColor="black" fontWeight="light">
-            We are a group of experienced engineers and designers who excel at
+          <Text flex={1} textColor="white" fontWeight="light">
+            We are experienced engineers,  designers and marketers who excel at
             crafting extraordinary digital experiences. We work with you every
             step of the way to make to make sure everything is perfect.
           </Text>
@@ -89,7 +87,7 @@ export const OurProcess = () => {
               h="full"
               flexDirection={["column", "row"]}
               gap={5}
-              p={5}
+              p={{ base: 2, md: 5 }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -117,10 +115,10 @@ export const OurProcess = () => {
                 textAlign={["center", "left"]}
                 alignItems={["center", "revert"]}
               >
-                <Text fontWeight="semibold" fontSize="xl">
+                <Text fontWeight="semibold" fontSize="xl" textColor="white">
                   {item.title}
                 </Text>
-                <Text flexGrow={1} textColor="gray.500">
+                <Text flexGrow={1} textColor="gray.400">
                   {item.description}
                 </Text>
               </Flex>

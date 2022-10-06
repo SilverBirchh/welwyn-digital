@@ -17,7 +17,7 @@ export const Card = (props: CardProps) => {
       pt="16"
       overflow="hidden"
       shadow="lg"
-      maxW="md"
+      maxW="sm"
       width="100%"
       {...rest}
     >

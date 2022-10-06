@@ -1,8 +1,9 @@
 import {
   Box,
+  Button,
   Container,
   Flex,
-  Grid,
+  SimpleGrid,
   Spacer,
   Text,
   useBreakpointValue,
@@ -10,6 +11,7 @@ import {
 import { MdDesignServices } from "react-icons/md";
 import { AiOutlineMobile } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
+import { TbSocial } from "react-icons/tb";
 import { ChakraBox } from "~/components/Layout/ChakraBox";
 
 const ITEMS = [
@@ -34,24 +36,37 @@ const ITEMS = [
     description:
       "We can build apps for a range of devices for internal and external users. We build delightful and snappy mobile experiences.",
   },
+  {
+    icon: <TbSocial size={50} color="#8ce8ef" />,
+    color: "#21d497",
+    title: "Marketing",
+    description:
+      "We can build apps for a range of devices for internal and external users. We build delightful and snappy mobile experiences.",
+  },
 ];
 
 const WhatWeDo = () => {
   const isSmall = useBreakpointValue([true, false]);
 
   return (
-    <>
+    <Flex
+      mt={-14}
+      zIndex={30}
+      p={{ base: 0, sm: 5, md: 10 }}
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+      pos="relative"
+    >
       <Flex
-        bgColor="white"
-        p={10}
-        minH="100vh"
+        bg="#334155"
+        shadow="md"
         justifyContent="center"
         direction="column"
-        backgroundImage="url(/blob.svg)"
-        backgroundSize="cover"
-        backgroundPosition="right"
+        borderRadius="md"
+        p={{ base: 2, sm: 5, md: 10 }}
       >
-        <Container maxW="900px" centerContent>
+        <Container maxW="1200px" centerContent py={5}>
           <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
             WHAT WE DO
           </Text>
@@ -63,14 +78,14 @@ const WhatWeDo = () => {
             flexDirection={["column"]}
             gap={5}
           >
-            <Text flex={1} fontSize="3xl" fontWeight="bold">
+            <Text flex={1} fontSize="3xl" fontWeight="bold" color="white">
               Perfect{" "}
               <Box as="span" color="#6dd2da">
                 solutions
               </Box>{" "}
               for your business
             </Text>
-            <Text flex={1} textColor="black" fontWeight="light">
+            <Text flex={1} fontWeight="light" color="white">
               Welwyn Digital can build your marketing website to a full-stack
               web or mobile app and everything in between. We will work closely
               with you, making sure to understand every requirement you have. We
@@ -79,17 +94,15 @@ const WhatWeDo = () => {
             </Text>
           </Flex>
         </Container>
-        <Spacer flexBasis={16} flexGrow={0} />
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          gap={10}
-          flexWrap="wrap"
+        <Spacer flexGrow={0} />
+        <SimpleGrid
+          columns={{ base: 1, md: 2 }}
+          spacing={5}
+          justifyItems="center"
         >
           {ITEMS.map((item, index) => (
             <ChakraBox
-              minWidth={["275px", "350px"]}
-              maxWidth={["275px", "350px"]}
+              maxWidth={["375px", "450px"]}
               bg="transparent"
               borderRadius="md"
               key={item.title}
@@ -117,17 +130,18 @@ const WhatWeDo = () => {
                 {item.icon}
               </Flex>
 
-              <Text fontWeight="semibold" fontSize="xl">
+              <Text fontWeight="semibold" fontSize="xl" color="white">
                 {item.title}
               </Text>
-              <Text flexGrow={1} textColor="gray.500">
+              <Text flexGrow={1} textColor="gray.300">
                 {item.description}
               </Text>
+              <Button size="xs" colorScheme="blue">Learn more</Button>
             </ChakraBox>
           ))}
-        </Flex>
+        </SimpleGrid>
       </Flex>
-    </>
+    </Flex>
   );
 };
 

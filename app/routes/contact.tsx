@@ -1,5 +1,8 @@
+import { Box } from "@chakra-ui/react";
 import type { MetaFunction } from "@remix-run/node";
-import Layout from "~/components/Layout/Grid";
+
+import Footer from "~/components/Layout/Footer";
+import Header from "~/components/Layout/Header";
 import { Enquiry } from "~/features/landing/components/Enquiry";
 
 export const meta: MetaFunction = () => ({
@@ -8,8 +11,14 @@ export const meta: MetaFunction = () => ({
 
 export default function Contact() {
   return (
-    <Layout>
-      <Enquiry theme="light" />
-    </Layout>
+    <Box
+      minH="100vh"
+      scrollBehavior="smooth"
+      bg="#0b1121"
+    >
+      <Header />
+      <Enquiry theme="transparent" />
+      <Footer />
+    </Box>
   );
 }

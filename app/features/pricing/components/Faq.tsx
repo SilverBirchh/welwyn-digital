@@ -23,28 +23,20 @@ const FAQs = [
     text: "A fully managed service includes, domain management, emails, secure hosting, security and updates. We will handle the tech and let you focus on your business. You can of course do certain bits yourself, just let us know which services that you require.",
   },
   {
-    title: "What is priority support and updates?",
-    text: "Priority support and updates on the start up plan are answered and deployed within 24 hours of the request coming though.",
-  },
-  {
     title: "Where are your sites hosted?",
-    text: "Our sites on secure servers through Fly. Fly runs servers all over the world meaning that your sites and apps will be close to your users. They have a generous free tier and are highly scalable thus reducing down time and we're prepared for when your site takes off.",
-  },
-  {
-    title: "Can I change plans?",
-    text: "Yes! You can change plans at any time just be sending us an email. Monthly plans are billed at the start of each month, if you cancel in the middle of a billing period your service will end once the current billing period is complete.",
+    text: "Our sites on secure servers through Fly.io. Fly runs servers all over the world meaning that your sites and apps will be close to your users. They have a generous free tier and are highly scalable thus reducing down time and we're prepared for when your site takes off.",
   },
 ];
 
 export const Faq = () => {
   return (
-    <Flex direction={["column", "column", "row"]} p={10} gap={20}>
+    <Flex direction={["column", "column", "row"]} p={10} gap={{base: 5, md: 20}}>
       <Flex direction="column">
         <Text color="#ff6c5a">Support</Text>
-        <Text fontWeight="bold" fontSize="3xl">
+        <Text fontWeight="bold" fontSize="3xl" color="white">
           FAQs
         </Text>
-        <Text color="gray.500">
+        <Text color="gray.300">
           Everything you need to know about the service and billing.
         </Text>
       </Flex>
@@ -63,13 +55,14 @@ export const Faq = () => {
                   fontSize="lg"
                   flex="1"
                   textAlign="left"
+                  color="white"
                 >
                   {faq.title}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            <AccordionPanel pb={4}>{faq.text}</AccordionPanel>
+            <AccordionPanel pb={4} color="gray.300">{faq.text}</AccordionPanel>
           </AccordionItem>
         ))}
       </Accordion>

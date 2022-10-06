@@ -14,11 +14,10 @@ export const Project: FC<ProjectProps> = ({
   title,
   text,
   image,
-  galleryImages,
   href,
 }) => {
   return (
-    <Container maxW="900px" mb={10}>
+    <Container maxW="900px" mb={10} color="white">
       <Flex direction="column" gap={5} alignItems="center" role="group">
         <Flex direction="column" gap={5}>
           <Box>
@@ -38,15 +37,11 @@ export const Project: FC<ProjectProps> = ({
               </Button>
             </HStack>
           </Box>
-          <Text maxW={"60ch"} color="gray.600">
+          <Text maxW={"60ch"} color="gray.300">
             {text}
           </Text>
         </Flex>
-        <Box
-          transition={"transform 500ms ease"}
-          transform={["scale(1)", "scale(0.8)"]}
-          _groupHover={{ transform: "scale(1)" }}
-        >
+        <Box>
           <Image
             unoptimized
             alt={title}

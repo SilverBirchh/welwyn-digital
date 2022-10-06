@@ -1,6 +1,7 @@
-import { Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import type { MetaFunction } from "@remix-run/node";
-import Layout from "~/components/Layout/Grid";
+import Footer from "~/components/Layout/Footer";
+import Header from "~/components/Layout/Header";
 import Contact from "~/features/pricing/components/Contact";
 import { Faq } from "~/features/pricing/components/Faq";
 import { Hero } from "~/features/pricing/components/Hero";
@@ -12,11 +13,13 @@ export const meta: MetaFunction = () => ({
 
 export default function Pricing() {
   return (
-    <Layout>
+    <Box minH="100vh" scrollBehavior="smooth" bg="#0b1121">
+      <Header />
       <Hero />
       <Prices />
       <Faq />
       <Contact />
-    </Layout>
+      <Footer />
+    </Box>
   );
 }

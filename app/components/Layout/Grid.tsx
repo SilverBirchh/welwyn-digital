@@ -11,7 +11,7 @@ type LayoutProps = {
 
 const Layout = ({
   children,
-  header = <Header />,
+  header = <Header backgroundColor="#062238" />,
   footer = <Footer />,
 }: LayoutProps) => {
   return (

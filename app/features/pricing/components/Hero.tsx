@@ -2,26 +2,30 @@ import { Flex, Text, Container, Spacer, Box } from "@chakra-ui/react";
 
 export const Hero = () => {
   return (
-    <Flex p={10} direction="column">
-      <Container maxW="900px" centerContent textAlign="center">
-        <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
-          PRICING
-        </Text>
-        <Spacer h={2} />
-        <Flex maxW="60ch" flexWrap="wrap" flexDirection={["column"]} gap={5}>
-          <Text flex={1} fontSize={["4xl", "5xl", "5xl"]} fontWeight="bold">
-            Find the right plan for
-            <br />
-            <Box as="span" color="#6dd2da">
-              your business
-            </Box>
+    <Box bg="#1e293b" pb={28} pt={5}>
+      <Flex px={{base: 2, sm: 5, md: 10}} py={10} direction="column">
+        <Container maxW="900px" centerContent textAlign="center">
+          <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
+            PRICING
           </Text>
-          <Text flex={1}>
-            We operate with a clear pricing model and there's a plan for
-            business of all sizes.
-          </Text>
-        </Flex>
-      </Container>
-    </Flex>
+          <Spacer h={2} />
+          <Flex
+            flexWrap="wrap"
+            flexDirection={["column"]}
+            gap={5}
+            color="white"
+          >
+            <Text flex={1} fontSize={["4xl", "5xl", "5xl"]} fontWeight="bold">
+              Simple no-tricks pricing
+            </Text>
+            <Text flex={1} fontSize="lg" color="gray.300">
+              Every project gets a free initial assessment with no obligation to
+              go ahead. We scope every project separately to give you the best
+              deal and so you know the cost upfront.
+            </Text>
+          </Flex>
+        </Container>
+      </Flex>
+    </Box>
   );
 };
