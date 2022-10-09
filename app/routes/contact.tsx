@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <Box minH="100vh" scrollBehavior="smooth" bg="#0b1121">
       <Header />
-      <Enquiry theme="transparent" />
+      <Enquiry />
       <Footer />
     </Box>
   );

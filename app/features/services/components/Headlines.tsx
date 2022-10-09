@@ -37,7 +37,14 @@ const DELIVER = [
 ];
 
 export const Headlines = () => (
-  <Flex flex={1} direction="column" mt={10} placeItems="center" mb={16}>
+  <Flex
+    flex={1}
+    direction="column"
+    mt={10}
+    placeItems="center"
+    mb={16}
+    color="white"
+  >
     <Container maxW="900px" centerContent textAlign={"center"} gap={5}>
       <Text fontWeight="medium" color={["#ff6c5a"]} letterSpacing="wide">
         THE HEADLINES
@@ -45,7 +52,7 @@ export const Headlines = () => (
       <Text flex={1} fontSize={["2xl", "3xl"]} fontWeight="bold">
         Everything you want from a digital partner
       </Text>
-      <Text fontSize="md" color="gray.600">
+      <Text fontSize="md" color="gray.300">
         No matter the service you choose, you can be sure you'll be in the
         safest of hands. We take this seriously. That's why every projects
         benefits from all of this as well!
@@ -63,7 +70,7 @@ export const Headlines = () => (
             justifyContent="center"
             alignItems="center"
             key={item.title}
-            bg="white"
+            bg="#334155"
             p={5}
             borderRadius="md"
             gap={5}
@@ -79,7 +86,7 @@ export const Headlines = () => (
               <Icon h={"full"} w={"full"} as={item.icon} color="white" />
             </Center>
             <Text fontWeight="bold">{item.title}</Text>
-            <Text textAlign="center" color={"gray.600"} fontSize="sm">
+            <Text textAlign="center" color={"gray.300"} fontSize="sm">
               {item.text}
             </Text>
           </Flex>

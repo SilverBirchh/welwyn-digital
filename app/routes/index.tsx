@@ -54,7 +54,7 @@ export default function Index() {
       <TrustedBy />
       <OurProcess />
       <OurProjects />
-      <Enquiry />
+      <Enquiry bg={"#062238"} />
       <Footer />
     </Box>
   );

@@ -1,69 +1,30 @@
-import {
-  Box,
-  Container,
-  Divider,
-  Flex,
-  Icon,
-  Spacer,
-  Text,
-} from "@chakra-ui/react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
+import { AiOutlineBuild, AiOutlineAlert } from "react-icons/ai";
+import { FaAppStoreIos } from "react-icons/fa";
 
-const SPECIAL = [
-  "Support Android & iOS",
-  "Managed Store Listings",
-  "Offline First",
-  "Notifications",
-  "Device Features",
-  "Usability",
-  "Full Stack Capabilities",
-];
+import { DisplayBox } from "./DisplayBox";
+import { Service } from "./Service";
 
 export const MobileApp = () => (
-  <Box bg="#f7fafc" borderRadius="md" shadow="md">
-    <Container id="mobile-apps" p={10} maxW="900px" centerContent>
-      <Spacer flexBasis={2} />
-      <Flex direction={["column", "row"]} gap={10}>
-        <Text flex={1}>
-          Mobile Apps can help your brand gain visibility, improve internal
-          processes and launch a new service. We build apps for Android and iOS
-          that can do all these things and more. We use cross platform
-          frameworks that mean we can build two apps in the time it takes to
-          build one. And there is no drop in quality.
-        </Text>
-        <Text flex={1}>
-          Our apps have all of the features you've come to expect. These include
-          notifications, offline access, downloads and more. Whatever you're
-          building an app for we'll build it with accessibility, ease of use and
-          ease of distribution in mind.
-        </Text>
-      </Flex>
-      <Spacer flexBasis={5} />
-      <Divider />
-      <Spacer flexBasis={5} />
-      <Text alignSelf="flex-start" fontSize="3xl">
-        Mobile apps with
-      </Text>
-      <Spacer flexBasis={5} />
-      <Flex
-        justifyContent={"center"}
-        alignItems="center"
-        gap={5}
-        flexWrap="wrap"
-        as="ul"
-        gridTemplateColumns={`auto`}
-        width="100%"
-      >
-        {SPECIAL.map((item) => (
-          <Box as="li" display="inline-block" key={item}>
-            <Flex alignItems="center" gap={2}>
-              <Icon as={BsArrowRightCircleFill} color="#ff6c5a" />
-              {item}
-            </Flex>
-          </Box>
-        ))}
-      </Flex>
-      <Spacer flexBasis={5} />
-    </Container>
-  </Box>
+  <Service imgSrc="/mobile.svg">
+    <DisplayBox
+      icon={FaAppStoreIos}
+      title="iOS & Android apps"
+      desc="Mobile Apps can help your brand gain visibility, improve internal
+            processes and launch a new service. We build apps for Android and iOS
+            that can do all these things and more."
+    />
+    <DisplayBox
+      icon={AiOutlineBuild}
+      title="Packed full of features"
+      desc="These include
+            notifications, offline access, downloads and more. Whatever you're
+            building an app for we'll build it with accessibility, ease of use and
+            ease of distribution in mind."
+    />
+    <DisplayBox
+      icon={AiOutlineAlert}
+      title="Fully managed"
+      desc="We'll manage your store listings, images, and copy. We regularly update our apps making sure they are on the latest security patches. We manage in-app purchases and reviews."
+    />
+  </Service>
 );
