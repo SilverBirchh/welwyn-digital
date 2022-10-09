@@ -8,6 +8,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { Link } from "@remix-run/react";
 import { AiOutlineMobile } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
 import { MdDesignServices } from "react-icons/md";
@@ -42,7 +43,7 @@ const ITEMS = [
     color: "#21d497",
     title: "Marketing",
     description:
-      "We can build apps for a range of devices for internal and external users. We build delightful and snappy mobile experiences.",
+      "We get ads in front of the right people for the right price. We offer Pay-per-click, search engine optimization and social media advertising",
   },
 ];
 
@@ -137,7 +138,7 @@ const WhatWeDo = () => {
               <Text flexGrow={1} textColor="gray.300">
                 {item.description}
               </Text>
-              <Button size="xs" colorScheme="blue">
+              <Button as={Link} to={`/services?t=${index}`} prefetch="intent" size="xs" colorScheme="blue">
                 Learn more
               </Button>
             </ChakraBox>

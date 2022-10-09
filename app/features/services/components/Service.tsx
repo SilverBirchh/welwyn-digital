@@ -10,7 +10,7 @@ export const Service = ({ children, imgSrc }: Props) => (
     <Box p={16} maxW="900px" minW="100%">
       <Flex
         minW="100%"
-        direction="row"
+        direction={{base: "column-reverse", lg: "row"}}
         gap={10}
         justifyContent="space-between"
         alignItems="center"
@@ -19,11 +19,13 @@ export const Service = ({ children, imgSrc }: Props) => (
           {children}
         </Flex>
         <AspectRatio
-          ml={{ base: 0, md: 20 }}
-          mt={{ base: 0, md: 10 }}
+          ml={{ base: 0, lg: 20 }}
+          mt={{ base: 0, lg: 10 }}
           flex={2}
           flexGrow={1}
           ratio={4 / 3}
+          h={{ base: "400px", lg: "auto" }}
+          w={{ base: "400px", lg: "auto" }}
         >
           <Box
             backgroundImage={imgSrc}

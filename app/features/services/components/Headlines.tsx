@@ -6,7 +6,7 @@ import { HiOutlineSupport } from "react-icons/hi";
 const DELIVER = [
   {
     title: "Responsive Design",
-    text: "Today people use the web on all sorts of devices. We make sure that your site is buttery smooth and looks great on all of them.",
+    text: "Today people use the web on all sorts of devices. We make sure that your site, adverts and apps look great on all of them.",
     icon: BiDevices,
   },
   {
@@ -16,12 +16,12 @@ const DELIVER = [
   },
   {
     title: "Fully Managed",
-    text: "We take care of domains, emails and content. If you need a content management systems just let us know.",
+    text: "We take care of domains, emails, content, ads. If you need a content management systems just let us know.",
     icon: BsGear,
   },
   {
     title: "UX & UI Design",
-    text: "We build innovative and user-centred design that keeps customers satisfied. It's build around your brand.",
+    text: "We build innovative and user-centred designs that keep customers satisfied. It's build around your brand.",
     icon: BsFlower3,
   },
   {

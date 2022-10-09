@@ -56,6 +56,7 @@ const CustomTab = forwardRef(
           pb={{ base: 2, md: 0 }}
           color={isSelected ? "#ff6c5a" : "gray.400"}
           whiteSpace="nowrap"
+          fontWeight="bold"
         >
           {tabProps.children}
         </Text>

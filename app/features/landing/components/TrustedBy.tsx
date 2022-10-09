@@ -44,6 +44,7 @@ export const TrustedBy = () => (
             maxWidth="200px"
             alt={company.name}
             as={Image}
+            title={company.name}
             loaderUrl="/api/image"
             src={company.url}
             loader={remixImageLoader}
