@@ -83,7 +83,7 @@ export const Hero = () => (
         <Text flex={1} fontSize={["3xl", "4xl"]} fontWeight="bold">
           Move faster with Welwyn Digital
         </Text>
-        <Text mt={4} maxW={"3xl"} color="gray.300">
+        <Text mt={4} maxW={"3xl"} color="white">
           We're dedicated to your project and want to see you succeed. That's
           why all you have to do is give us the brief and we'll handle the rest.
           We get ads in front of the right people and websites that morph to any

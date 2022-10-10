@@ -30,7 +30,7 @@ export const MenuDrawer: FC<Props> = ({ isOpen, onClose, btnRef }) => (
     >
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerCloseButton />
+        <DrawerCloseButton color="white" />
         <DrawerHeader>
           <Box as="span" color="#6dd2da">
             Welwyn

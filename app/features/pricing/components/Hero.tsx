@@ -20,7 +20,7 @@ export const Hero = () => (
           <Text flex={1} fontSize={["4xl", "5xl", "5xl"]} fontWeight="bold">
             Simple no-tricks pricing
           </Text>
-          <Text flex={1} fontSize="lg" color="gray.300">
+          <Text flex={1} fontSize="lg" color="white">
             Every project gets a free initial assessment with no obligation to
             go ahead. We scope every project separately to give you the best
             deal and so you know the cost upfront.

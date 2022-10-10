@@ -28,7 +28,7 @@ export const Hero = () => (
               creativity
             </Box>
           </Text>
-          <Text flex={1} color="gray.300">
+          <Text flex={1} color="white">
             Have a look through some of our recent work. We specialise in sleek,
             premium feeling user interfaces that delight users.
           </Text>

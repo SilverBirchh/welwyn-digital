@@ -56,6 +56,7 @@ export const OurProjects = () => (
             loader={remixImageLoader}
             placeholder="blur"
             dprVariants={[1, 3]}
+            loading="eager"
             responsive={[
               {
                 size: {

@@ -7,7 +7,7 @@ type Props = {
 
 export const Service = ({ children, imgSrc }: Props) => (
   <Box bg="#1a202c" borderRadius="md" shadow="md" color="white">
-    <Box p={16} maxW="900px" minW="100%">
+    <Box p={{base: 5, md: 16}} maxW="900px" minW="100%">
       <Flex
         minW="100%"
         direction={{base: "column-reverse", lg: "row"}}
@@ -26,6 +26,7 @@ export const Service = ({ children, imgSrc }: Props) => (
           ratio={4 / 3}
           h={{ base: "400px", lg: "auto" }}
           w={{ base: "400px", lg: "auto" }}
+          maxW="100%"
         >
           <Box
             backgroundImage={imgSrc}
