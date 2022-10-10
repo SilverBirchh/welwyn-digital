@@ -50,7 +50,7 @@ export const OurProcess = () => (
     direction="column"
   >
     <Container maxW="900px" centerContent>
-      <Text fontWeight="medium" color={"#ff6c5a"} letterSpacing="wide">
+      <Text fontWeight="medium" color="#6dd2da" letterSpacing="wide">
         WHY CHOOSE US
       </Text>
       <Flex
@@ -61,7 +61,7 @@ export const OurProcess = () => (
         maxW="60ch"
       >
         <Text textColor="white" flex={1} fontSize="3xl" fontWeight="bold">
-          <Box as="span" color="#6dd2da">
+          <Box as="span" color={"#ff6c5a"}>
             Experts
           </Box>{" "}
           in what we do

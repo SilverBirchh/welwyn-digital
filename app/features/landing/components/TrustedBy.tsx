@@ -18,7 +18,7 @@ const TRUSTED_BY = [
 
 export const TrustedBy = () => (
   <Center flexDirection="column" py={28} bg="#0b1121">
-    <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
+    <Text fontWeight="medium" color="#6dd2da" letterSpacing="wide">
       TRUSTED BY
     </Text>
     <Flex

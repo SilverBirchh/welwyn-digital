@@ -70,7 +70,7 @@ const WhatWeDo = () => {
         p={{ base: 2, sm: 5, md: 10 }}
       >
         <Container maxW="1200px" centerContent py={5}>
-          <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
+          <Text fontWeight="medium" color="#6dd2da" letterSpacing="wide">
             WHAT WE DO
           </Text>
           <Spacer h={2} />
@@ -83,7 +83,7 @@ const WhatWeDo = () => {
           >
             <Text flex={1} fontSize="3xl" fontWeight="bold" color="white">
               Perfect{" "}
-              <Box as="span" color="#6dd2da">
+              <Box as="span" color="#ff6c5a">
                 solutions
               </Box>{" "}
               for your business

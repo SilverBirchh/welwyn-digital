@@ -52,7 +52,7 @@ export const Enquiry: FC<Props> = ({ bg = "#0b1121" }: Props) => {
       direction="column"
     >
       <Container maxW="900px">
-        <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
+        <Text fontWeight="medium" color="#6dd2da" letterSpacing="wide">
           GET IN TOUCH
         </Text>
         <Spacer h={2} />

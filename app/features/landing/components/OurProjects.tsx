@@ -24,7 +24,7 @@ const PROJECTS = [
 
 export const OurProjects = () => (
   <Flex pt={20} bg="#334155" direction="column" textAlign={"center"}>
-    <Text fontWeight="medium" color="#ff6c5a" letterSpacing="wide">
+    <Text fontWeight="medium" color="#6dd2da" letterSpacing="wide">
       OUR WORK
     </Text>
     <Spacer h={2} />
@@ -35,7 +35,7 @@ export const OurProjects = () => (
       fontWeight="bold"
     >
       Full of{" "}
-      <Box as="span" color="#6dd2da">
+      <Box as="span" color="#ff6c5a">
         creativity
       </Box>
     </Text>
