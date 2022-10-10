@@ -74,7 +74,6 @@ export const Enquiry: FC<Props> = ({ bg = "#0b1121" }: Props) => {
         <Spacer h={10} />
         <ChakraBox
           bg={bg}
-          shadow={"lg"}
           borderRadius="md"
           h="full"
           initial="hidden"
