@@ -7,6 +7,7 @@ import {
   Spacer,
   Text,
   useBreakpointValue,
+  VisuallyHidden,
 } from "@chakra-ui/react";
 import { Link } from "@remix-run/react";
 import { AiOutlineMobile } from "react-icons/ai";
@@ -139,6 +140,7 @@ const WhatWeDo = () => {
                 {item.description}
               </Text>
               <Button as={Link} to={`/services?t=${index}`} prefetch="intent" size="xs" colorScheme="blue">
+              <VisuallyHidden>View {item.title}</VisuallyHidden>
                 Learn more
               </Button>
             </ChakraBox>

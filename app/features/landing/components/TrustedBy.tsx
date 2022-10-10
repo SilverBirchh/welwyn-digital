@@ -3,7 +3,7 @@ import Image, { remixImageLoader } from "remix-image";
 
 const TRUSTED_BY = [
   {
-    name: "Hep Skip Hire",
+    name: "Hep Olis",
     url: "hepoil-logo.png",
   },
   {
@@ -42,6 +42,8 @@ export const TrustedBy = () => (
           <Img
             minWidth="200px"
             maxWidth="200px"
+            height="75"
+            width="150"
             alt={company.name}
             as={Image}
             title={company.name}

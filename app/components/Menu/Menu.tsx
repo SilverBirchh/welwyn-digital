@@ -51,6 +51,7 @@ export const Menu = () => {
         p={2}
         ref={btnRef}
         onClick={onOpen}
+        aria-label="menu"
       >
         <Icon
           as={CgMenuRight}
