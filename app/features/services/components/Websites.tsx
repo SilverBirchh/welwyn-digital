@@ -19,7 +19,7 @@ export const Websites = () => (
       title="With you all the way"
       desc="We'll help you through initial research, first designs,
             development and post launch updates. We use battle tested
-            technologies to make sure your site always ready to go."
+            technologies to make sure your site is always ready to go."
     />
     <DisplayBox
       icon={GiSmart}
