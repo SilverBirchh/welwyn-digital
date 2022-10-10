@@ -18,7 +18,7 @@ const FEATURES = [
   "48hr support response",
   "Free updates",
   "Fully managed service",
-  "Predictable Pricing",
+  "Predictable pricing",
   "Regular site review",
   "Regular visitor statistics report",
 ];
@@ -45,7 +45,7 @@ export const Prices = () => (
           Project Based
         </Text>
         <Text color="gray.300" mt={5}>
-          Get in touch to discuss your digital project. There are no hourly
+          Get in touch to discuss your project. There are no hourly
           rates here. We know every project is unique and take care to discuss
           with you your exact needs and requirements.
         </Text>

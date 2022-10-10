@@ -12,7 +12,7 @@ import {
 const FAQs = [
   {
     title: "What is a free update?",
-    text: "These are smaller changes that would take less than an hour to complete. When you request a change we will be clear if the change is a free update. If you are using a CMS you can make changes or any size yourself. If you do not have a CMS all you have to do is send us an email to get the change started. On the pay as you go plan this will take up to 48 hours to change. Start up plan members will see changes live in 24 hours.",
+    text: "These are smaller changes that would take less than an hour to complete. When you request a change we will be clear if the change is a free update. If you are using a CMS you can make changes of any size yourself. If you do not have a CMS all you have to do is send us an email to get the change started.",
   },
   {
     title: "What about hosting costs?",
