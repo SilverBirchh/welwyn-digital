@@ -55,34 +55,33 @@ export const OurProjects = () => (
           key={project.title}
         >
           <Img
-            unoptimized
             alt={project.title}
             as={Image}
             loaderUrl="/api/image"
             src={project.image}
             loader={remixImageLoader}
-            placeholder="blur"
-            dprVariants={[1, 3]}
-            loading="lazy"
+            width={{ base: '300px', md: '500px', lg: '600px' }}
+            style={{
+              maxWidth: "100%",
+              minWidth: "100% !important",
+              maxHeight: "100%",
+              minHeight: "100% !important",
+            }}
             responsive={[
               {
                 size: {
-                  width: project.sizes[0],
+                  width: 500,
                 },
+                maxWidth: 900,
               },
               {
                 size: {
-                  width: project.sizes[1],
+                  width: 600,
                 },
-                maxWidth: 300,
-              },
-              {
-                size: {
-                  width: project.sizes[2],
-                },
-                maxWidth: 200,
+                maxWidth: 1200,
               },
             ]}
+            dprVariants={[3, 6]}
           />
         </Box>
       ))}

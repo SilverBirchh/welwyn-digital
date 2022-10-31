@@ -1,18 +1,77 @@
 import { Center, Flex, Img, Text } from "@chakra-ui/react";
-import Image, { remixImageLoader } from "remix-image";
+
+import { OptimizedImage } from "~/components/OptimisedImage";
 
 const TRUSTED_BY = [
   {
     name: "Hep Olis",
-    url: "hepoil-logo.png",
+    url: "/hepoil-logo.png",
+    height: 90,
+    width: 200,
+    responsive: [
+      {
+        size: {
+          height: 100,
+          width: 200,
+        },
+      },
+    ],
   },
   {
     name: "Aligned With Love",
-    url: "awl.png",
+    url: "/awl.png",
+    height: 90,
+    width: 90,
+    responsive: [
+      {
+        size: {
+          height: 75,
+          width: 75,
+        },
+        maxWidth: 600,
+      },
+      {
+        size: {
+          height: 100,
+          width: 100,
+        },
+        maxWidth: 767,
+      },
+      {
+        size: {
+          height: 150,
+          width: 150,
+        },
+      },
+    ],
   },
   {
     name: "Hep Skip Hire",
-    url: "hsh.png",
+    url: "/hsh.png",
+    height: 90,
+    width:200,
+    responsive: [
+      {
+        size: {
+          height: 75,
+          width: 200,
+        },
+        maxWidth: 600,
+      },
+      {
+        size: {
+          height: 150,
+          width: 400,
+        },
+        maxWidth: 767,
+      },
+      {
+        size: {
+          height: 150,
+          width: 400,
+        },
+      },
+    ],
   },
 ];
 
@@ -40,25 +99,14 @@ export const TrustedBy = () => (
           maxWidth="200px"
         >
           <Img
-            minWidth="200px"
-            maxWidth="200px"
-            height="75"
-            width="150"
+            height={company.height}
+            width={company.width}
             alt={company.name}
-            as={Image}
+            as={OptimizedImage}
             title={company.name}
-            loaderUrl="/api/image"
             src={company.url}
-            loader={remixImageLoader}
             placeholder="blur"
-            responsive={[
-              {
-                size: {
-                  width: 75,
-                },
-              },
-            ]}
-            dprVariants={[6]}
+            responsive={company.responsive}
           />
         </Center>
       ))}

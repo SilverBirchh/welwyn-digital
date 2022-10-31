@@ -105,7 +105,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     if (width || height) {
       sharpInstance.resize(width, height, { fit });
     }
-    sharpInstance.webp();
+    sharpInstance.webp({ quality: 100 });
 
     const imageManipulationStream = imageBody.pipe(sharpInstance);
 
