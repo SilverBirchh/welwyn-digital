@@ -45,7 +45,7 @@ const CustomTab = forwardRef(
     const isSelected = !!tabProps["aria-selected"];
 
     return (
-      <VStack outline="none" cursor="pointer" {...tabProps}>
+      <VStack outline="none" cursor="pointer" width="80px" {...tabProps}>
         <Icon
           as={props.icon}
           h={50}
@@ -98,7 +98,13 @@ export const Hero = () => (
         pb={28}
         bg={{ base: "#1e293b", lg: "transparent" }}
       >
-        <TabList gap={20} overflow={"auto"}>
+        <TabList
+          gap={20}
+          display="flex"
+          flexWrap="wrap"
+          justifyContent={{ base: "center", md: "flex-start" }}
+          alignItems="center"
+        >
           {TABS.map((tab) => (
             <CustomTab key={tab.title} icon={tab.icon}>
               {tab.title}

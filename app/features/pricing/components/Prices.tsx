@@ -45,9 +45,9 @@ export const Prices = () => (
           Project Based
         </Text>
         <Text color="gray.300" mt={5}>
-          Get in touch to discuss your project. There are no hourly
-          rates here. We know every project is unique and take care to discuss
-          with you your exact needs and requirements.
+          Get in touch to discuss your project. There are no hourly rates here.
+          We know every project is unique and take care to discuss with you your
+          exact needs and requirements.
         </Text>
         <Flex alignItems="center" mt={5}>
           <Text color="#6dd2da" fontWeight="bold">

@@ -55,7 +55,7 @@ export const sharpTransformer: Transformer = {
       animated: true,
     });
 
-    image.ensureAlpha(1);
+    // image.ensureAlpha(1);
 
     if (crop) {
       image.extract({

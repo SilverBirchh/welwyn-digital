@@ -17,14 +17,15 @@ import { MenuDrawer } from "./MenuDrawer";
 export const Menu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <HStack
         py={1}
         gap={2}
-        alignItems="flex-start"
+        alignItems="center"
         color="white"
-        fontSize="small"
+        fontSize="medium"
         display={{ base: "none", sm: "flex" }}
       >
         <Link as={RemixLink} to="/services">
@@ -36,8 +37,8 @@ export const Menu = () => {
         <Link as={RemixLink} to="/pricing">
           <Text>Pricing</Text>
         </Link>
-        <Button as={RemixLink} to="/contact" colorScheme="teal" size="xs">
-          Contact
+        <Button as={RemixLink} to="/contact" colorScheme="teal" size="sm">
+          Free Quote
         </Button>
       </HStack>
       {/* Mobile Drawer */}

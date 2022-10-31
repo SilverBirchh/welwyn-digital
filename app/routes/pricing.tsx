@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Center, Divider } from "@chakra-ui/react";
 import type { MetaFunction } from "@remix-run/node";
 
 import Footer from "~/components/Layout/Footer";
@@ -18,7 +18,13 @@ export default function Pricing() {
       <Header />
       <Hero />
       <Prices />
+      <Center my={5}>
+        <Divider w="90%" />
+      </Center>
       <Faq />
+      <Center my={5}>
+        <Divider w="90%" />
+      </Center>
       <Contact />
       <Footer />
     </Box>

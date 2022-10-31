@@ -53,7 +53,7 @@ const WhatWeDo = () => {
 
   return (
     <Flex
-      mt={-14}
+      mt={{ base: -6, md: -20 }}
       zIndex={30}
       p={{ base: 0, sm: 5, md: 10 }}
       justifyContent="center"
@@ -139,8 +139,14 @@ const WhatWeDo = () => {
               <Text flexGrow={1} textColor="gray.300">
                 {item.description}
               </Text>
-              <Button as={Link} to={`/services?t=${index}`} prefetch="intent" size="xs" colorScheme="blue">
-              <VisuallyHidden>View {item.title}</VisuallyHidden>
+              <Button
+                as={Link}
+                to={`/services?t=${index}`}
+                prefetch="intent"
+                size="sm"
+                colorScheme="blue"
+              >
+                <VisuallyHidden>View {item.title}</VisuallyHidden>
                 Learn more
               </Button>
             </ChakraBox>

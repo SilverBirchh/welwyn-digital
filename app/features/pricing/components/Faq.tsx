@@ -62,7 +62,7 @@ export const Faq = () => (
               >
                 {faq.title}
               </Box>
-              <AccordionIcon />
+              <AccordionIcon color="white" />
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4} color="gray.300">

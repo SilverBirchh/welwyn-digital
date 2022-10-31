@@ -1,6 +1,14 @@
 import type { FC } from "react";
 
-import { Flex, Box, HStack, Button, Text, Container } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  HStack,
+  Button,
+  Text,
+  Container,
+  Img,
+} from "@chakra-ui/react";
 import Image from "remix-image";
 
 export type ProjectProps = {
@@ -37,18 +45,18 @@ export const Project: FC<ProjectProps> = ({ title, text, image, href }) => (
         </Text>
       </Flex>
       <Box>
-        <Image
-          unoptimized
+        <Img
+          as={Image}
           alt={title}
           src={image}
-          dprVariants={[2]}
+          width={{ base: '300px', md: '500px', lg: '600px' }}
+          style={{
+            maxWidth: "100%",
+            minWidth: "100% !important",
+            maxHeight: "100%",
+            minHeight: "100% !important",
+          }}
           responsive={[
-            {
-              size: {
-                width: 300,
-              },
-              maxWidth: 600,
-            },
             {
               size: {
                 width: 500,
@@ -62,6 +70,7 @@ export const Project: FC<ProjectProps> = ({ title, text, image, href }) => (
               maxWidth: 1200,
             },
           ]}
+          dprVariants={[3, 6]}
         />
       </Box>
     </Flex>

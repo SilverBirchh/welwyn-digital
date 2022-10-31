@@ -58,7 +58,7 @@ export const TrustedBy = () => (
                 },
               },
             ]}
-            dprVariants={[1, 3]}
+            dprVariants={[6]}
           />
         </Center>
       ))}

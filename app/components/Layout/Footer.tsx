@@ -23,8 +23,7 @@ const Footer = () => (
       </Flex>
       <Spacer h={5} />
       <Text fontSize="xs" color="gray.400">
-        © Welwyn Digital • Registered in
-        England • 14353606
+        © Welwyn Digital • Registered in England • 14353606
       </Text>
     </Container>
   </Flex>

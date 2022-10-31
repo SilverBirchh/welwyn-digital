@@ -40,7 +40,14 @@ export const OurProjects = () => (
       </Box>
     </Text>
     <Spacer flexBasis={5} />
-    <Flex pb={20} gap={20} overflow="scroll" px={10} alignItems="center">
+    <Flex
+      pb={20}
+      gap={20}
+      px={10}
+      alignItems="center"
+      justifyContent={"center"}
+      flexWrap="wrap"
+    >
       {PROJECTS.map((project) => (
         <Box
           minW={["300px", "350px", "400px"]}
@@ -56,7 +63,7 @@ export const OurProjects = () => (
             loader={remixImageLoader}
             placeholder="blur"
             dprVariants={[1, 3]}
-            loading="eager"
+            loading="lazy"
             responsive={[
               {
                 size: {

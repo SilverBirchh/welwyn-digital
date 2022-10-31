@@ -7,10 +7,10 @@ type Props = {
 
 export const Service = ({ children, imgSrc }: Props) => (
   <Box bg="#1a202c" borderRadius="md" shadow="md" color="white">
-    <Box p={{base: 5, md: 16}} maxW="900px" minW="100%">
+    <Box p={{ base: 5, md: 16 }} maxW="900px" minW="100%">
       <Flex
         minW="100%"
-        direction={{base: "column-reverse", lg: "row"}}
+        direction={{ base: "column-reverse", lg: "row" }}
         gap={10}
         justifyContent="space-between"
         alignItems="center"

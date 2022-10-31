@@ -53,7 +53,7 @@ export const Enquiry: FC<Props> = ({ bg = "#0b1121" }: Props) => {
     >
       <Container maxW="900px">
         <Text fontWeight="medium" color="#6dd2da" letterSpacing="wide">
-          GET IN TOUCH
+          FREE CHAT
         </Text>
         <Spacer h={2} />
         <Flex
