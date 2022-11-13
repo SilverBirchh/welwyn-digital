@@ -2,7 +2,13 @@ import React, { useContext, useEffect } from "react";
 
 import { ChakraProvider, DarkMode } from "@chakra-ui/react";
 import { withEmotionCache } from "@emotion/react";
-import type { MetaFunction, LinksFunction } from "@remix-run/node";
+import type {
+  MetaFunction,
+  LinksFunction,
+  LoaderFunction} from "@remix-run/node";
+import {
+  json,
+} from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -10,11 +16,17 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
+  useLocation,
 } from "@remix-run/react";
 import remixImageStyles from "remix-image/remix-image.css";
 
+import * as gtag from "~/utils/gtags.client";
+
+import { Cookie } from "./components/Cookie";
 import { ServerStyleContext, ClientStyleContext } from "./context";
 import theme from "./styles/theme";
+
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -36,10 +48,18 @@ export const links: LinksFunction = () => [
 
 interface DocumentProps {
   children: React.ReactNode;
+  gaTrackingId: string | undefined;
 }
 
+type LoaderData = {
+  gaTrackingId: string | undefined;
+};
+
+export const loader: LoaderFunction = async () =>
+  json<LoaderData>({ gaTrackingId: process.env.GA_TRACKING_ID });
+
 const Document = withEmotionCache(
-  ({ children }: DocumentProps, emotionCache) => {
+  ({ children, gaTrackingId }: DocumentProps, emotionCache) => {
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
 
@@ -74,6 +94,28 @@ const Document = withEmotionCache(
           ))}
         </head>
         <body>
+          {process.env.NODE_ENV === "development" || !gaTrackingId ? null : (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
+              />
+              <script
+                async
+                id="gtag-init"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaTrackingId}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+                }}
+              />
+            </>
+          )}
           {children}
           <ScrollRestoration />
           <Scripts />
@@ -85,11 +127,21 @@ const Document = withEmotionCache(
 );
 
 export default function App() {
+  const location = useLocation();
+  const { gaTrackingId } = useLoaderData<LoaderData>();
+
+  useEffect(() => {
+    if (gaTrackingId?.length) {
+      gtag.pageview(location.pathname, gaTrackingId);
+    }
+  }, [location, gaTrackingId]);
+
   return (
-    <Document>
+    <Document gaTrackingId={gaTrackingId}>
       <ChakraProvider theme={theme}>
         <DarkMode>
           <Outlet />
+          <Cookie />
         </DarkMode>
       </ChakraProvider>
     </Document>

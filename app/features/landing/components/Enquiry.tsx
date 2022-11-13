@@ -21,6 +21,7 @@ import { BsFillPhoneVibrateFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
 import { ChakraBox } from "~/components/Layout/ChakraBox";
+import * as gtag from "~/utils/gtags.client";
 
 type Props = {
   bg?: string;
@@ -34,6 +35,12 @@ export const Enquiry: FC<Props> = ({ bg = "#0b1121" }: Props) => {
   useEffect(() => {
     if (state.succeeded) {
       formRef.current?.reset();
+
+      gtag?.event({
+        action: "submit_form",
+        category: "Contact",
+      });
+
       toast({
         title: "Enquiry Sent.",
         description: "We've got your message and will be in touch shortly!",
@@ -43,7 +50,6 @@ export const Enquiry: FC<Props> = ({ bg = "#0b1121" }: Props) => {
       });
     }
   }, [state.succeeded, toast]);
-
   return (
     <Flex
       id="get-in-touch"
