@@ -5,10 +5,9 @@ import { withEmotionCache } from "@emotion/react";
 import type {
   MetaFunction,
   LinksFunction,
-  LoaderFunction} from "@remix-run/node";
-import {
-  json,
+  LoaderFunction,
 } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -26,7 +25,6 @@ import * as gtag from "~/utils/gtags.client";
 import { Cookie } from "./components/Cookie";
 import { ServerStyleContext, ClientStyleContext } from "./context";
 import theme from "./styles/theme";
-
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -82,6 +80,20 @@ const Document = withEmotionCache(
     return (
       <html lang="en">
         <head>
+          {process.env.NODE_ENV === "development" || !gaTrackingId ? null : (
+            <script
+              id="gtag-init"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','${gaTrackingId}');
+              `,
+              }}
+            />
+          )}
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
           <Meta />
           <Links />
@@ -94,32 +106,21 @@ const Document = withEmotionCache(
           ))}
         </head>
         <body>
-          {process.env.NODE_ENV === "development" || !gaTrackingId ? null : (
-            <>
-              <script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
-              />
-              <script
-                async
-                id="gtag-init"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaTrackingId}', {
-                  page_path: window.location.pathname,
-                });
-              `,
-                }}
-              />
-            </>
-          )}
           {children}
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
+          {process.env.NODE_ENV === "development" || !gaTrackingId ? null : (
+            <noscript>
+              <iframe
+                title="gtag"
+                src={`https://www.googletagmanager.com/ns.html?id=${gaTrackingId}`}
+                height="0"
+                width="0"
+                style={{ display: "none", visibility: "hidden" }}
+              ></iframe>
+            </noscript>
+          )}
         </body>
       </html>
     );

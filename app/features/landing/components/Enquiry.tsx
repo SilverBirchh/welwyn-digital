@@ -35,12 +35,6 @@ export const Enquiry: FC<Props> = ({ bg = "#0b1121" }: Props) => {
   useEffect(() => {
     if (state.succeeded) {
       formRef.current?.reset();
-
-      gtag?.event({
-        action: "submit_form",
-        category: "Contact",
-      });
-
       toast({
         title: "Enquiry Sent.",
         description: "We've got your message and will be in touch shortly!",
@@ -48,6 +42,12 @@ export const Enquiry: FC<Props> = ({ bg = "#0b1121" }: Props) => {
         duration: 9000,
         isClosable: true,
       });
+
+      gtag?.event({
+        action: "submit_form",
+        category: "Contact",
+      });
+
     }
   }, [state.succeeded, toast]);
   return (
